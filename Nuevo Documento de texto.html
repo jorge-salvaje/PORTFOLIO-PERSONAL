@@ -1,0 +1,193 @@
+<html>
+
+<head>
+
+<style>
+
+
+.botonmenu{
+font-size: 2rem;
+font-family: "Jersey 10";
+display: flex;
+justify-content: center;
+background-color: rgb(190, 187, 187);
+cursor: pointer;
+text-align: center;
+border-bottom: 4px solid #000;
+border-right: 4px solid #000;   
+}
+
+
+
+.botonmenu:hover{
+transition: 0.5s;
+border-bottom: 1px solid #000;
+border-right: 1px solid #000; 
+transform:translate(5px,5px);  
+}
+
+#botonbarra
+{
+margin:0;
+width:10%;
+height:7%;
+cursor: pointer;
+padding:2px;
+border-bottom: 4px solid #000000;
+border-right: 4px solid #000000;  
+
+}
+
+
+#botonbarra:active{
+transition: 0.5s;
+border-bottom: 1px solid #000;
+border-right: 1px solid #000; 
+transform:translate(5px,5px);  
+}
+
+#botonsalir
+{
+font-size:2rem;
+text-align: center;
+ top: 50%;                   
+left: 50%;    
+background-color:#b1a9a9;
+max-width: 41px;
+max-height: 42px;
+z-index:1;
+margin:0;
+padding-top:3px;
+padding-left: 10px;
+padding-right:10px; 
+border-top:2px solid black;
+border-bottom:2px solid black;
+font-family:"jersey 10"; 
+}
+
+#ubicacion
+{
+display:flex;
+align-items: center;
+justify-content:center;
+margin:0;  
+}
+
+#colorboton
+{
+background-color: #394dcd; 
+margin:0; 
+text-align:center;
+font-family:"jersey 10";      
+padding-left: 200px;
+padding-right:200px;
+z-index:-1;
+font-size:2.1rem;
+height:38px;
+border-top:2px solid black;
+border-bottom:2px solid black;
+}
+
+#estructuracanciones
+{
+display:flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding-left: 200px;
+padding-right:200px;
+margin:0; 
+}
+
+#colorcanciones
+{
+background-color:#dfd9d9;
+border: 10px solid #dfd9d9;
+margin:0; 
+overflow-y: auto; 
+width:510px;
+}
+
+#canciones
+{
+max-width: 1000px;
+max-height:1000px;  
+font-size:2rem;
+font-family:"jersey 10";
+margin:0;
+overflow-y: auto; 
+}
+
+
+
+.estructuraportadas
+{
+display:flex;
+align-items: center;
+justify-content: center;
+flex-direction: row;
+margin:0;
+}
+
+.portadas{
+width:23%;
+height:23%;  
+padding:10px;    
+}
+</style>
+
+
+</head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Boldonse&family=Bungee+Spice&family=Cal+Sans&family=Coral+Pixels&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Gabarito:wght@400..900&family=Jersey+10&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Nabla&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Odibee+Sans&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Pacifico&family=Pixelify+Sans:wght@400..700&family=Poetsen+One&family=Silkscreen:wght@400;700&family=Tagesschrift&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+
+
+<body>
+
+<button><span>PROYECTOS</span></button>
+<button><span>ACERCA DE MI</span></button>
+<div id="bordeinterior">
+<img id="botonbarra" src="logo.png">
+</div>
+
+<div style="display:flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;">
+<div style="padding-left: 277px; padding-right:277px;background-color: #ddd8d8;height:10px;border-top:2px solid black;border-left:2px solid black;border-right:2px solid black;
+margin:0;"></div>
+<div id="ubicacion">
+<div style="  width: 8px;height:42px;background-color:#ddd8d8;border-left:2px solid black;margin:0; "></div>
+<div style="  width: 10px;height:38px;background-color:#394dcd;border-top:2px solid black;margin:0;border-bottom:2px solid black; "></div>
+<div id="colorboton">MUSICA</div>
+<button id="botonsalir">X</button>
+<div style="  width: 10px;height:38px;background-color:#394dcd;border-top:2px solid black;margin:0;border-bottom:2px solid black; "></div>
+<div style="  width: 8px;height:42px;background-color:#ddd8d8; border-right:2px solid black;margin:0; "></div>
+</div>
+<div id="estructuracanciones">
+<div style="border-left: 2px solid #000000;border-bottom: 2px solid #000000;border-right: 2px solid #000000; background-color: #ddd8d8  ;padding:10px;margin:0; ">
+<div style="border: 2px solid #ffffff;">   
+<div id="colorcanciones">
+<div class="estructuraportadas">
+<img class="portadas" src="portadas albumes/KID A.png">
+<img class="portadas" src="portadas albumes/21ST CENTURY BREAKDOWN.jpg">
+<img class="portadas" src="portadas albumes/21ST CENTURY BREAKDOWN.jpg">
+</div>
+<div class="estructuraportadas">
+<img class="portadas" src="portadas albumes/KID A.png">
+<img class="portadas" src="portadas albumes/21ST CENTURY BREAKDOWN.jpg">
+<img class="portadas" src="portadas albumes/21ST CENTURY BREAKDOWN.jpg">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</body>
+
+</html>

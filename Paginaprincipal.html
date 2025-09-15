@@ -1,0 +1,1192 @@
+<html>
+<head>
+
+<style>
+
+body{
+margin:0;
+     cursor: url('arrow.png'), auto;
+}
+
+
+
+            #boton {
+            padding-left:10px;
+            width:3%;
+            height:3%;
+            cursor: url('arrow.png'), auto;
+            
+            }
+            #disco {
+                  position: fixed;
+                  top: 10px;
+                  right: 10px;
+                  width: 80px;
+                 
+                  opacity: 0;
+                  transition: opacity 0.5s ease;
+                  pointer-events: none;
+            }
+
+            #disco.visible {
+                  opacity: 1;
+            }
+
+            #texto-pantalla{
+            font-family:"Coral pixels";
+            font-size:5vw;
+            text-align:center;
+            white-space: nowrap;
+                   background: linear-gradient(90deg,rgba(114, 170, 49, 1) 0%, rgb(185, 187, 184) 50%, rgba(114, 170, 49, 1) 99%);
+                  background-clip: text;
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            top: 50%;
+            left: 50%;
+            position:absolute;
+            background-size: 300% 300%;
+            padding-bottom:10px;
+            animation: sombra 5s infinite alternate;
+            }
+
+
+@keyframes sombra{
+0%{background-position: 0% 50%;}
+50%{background-position: 100% 50%;}
+100%{background-position: 0% 50%;}
+}
+
+
+
+#pantallacarga
+{
+  position: fixed;
+  top: 0; left: 0;
+ width: 100vw;
+  height: 100vh;
+  
+  background: black;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  z-index: 9999;
+  cursor: url('arrow.png'), auto;
+}
+
+#contenidopantalla{
+position:relative;
+ transform: translateY(-10vh);
+  cursor: url('arrow.png'), auto;
+}
+
+.titulo{
+font-size:5rem;
+font-family:"Coral pixels";
+text-align: center;
+background: linear-gradient(90deg,rgba(102, 100, 100, 1) 0%, rgba(54, 42, 42, 1) 56%, rgba(79, 58, 58, 1) 100%);
+       background-clip: text;
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+margin:0;
+padding-bottom:20px;
+}
+
+.botonmenu{
+font-size: 3rem;
+font-family: "Jersey 10";
+background-color: rgb(190, 187, 187);
+border-bottom: 8px solid #000;
+border-right: 8px solid #000;
+width: 90%;
+cursor: url('arrow.png'), auto;
+}
+
+#colorfondo
+{
+background-color: rgb(0,128,128);
+padding-bottom:20px;   
+ cursor: url('arrow.png'), auto;
+}
+
+
+#opciones{
+column-count:4;   
+text-align:center;
+list-style: none;
+padding-left:20px;
+padding-right:20px;
+margin:0;
+cursor: url('arrow.png'), auto;
+}
+
+.botonmenu:active{
+transition: 0.1;
+border-bottom: 1px solid #000;
+border-right: 1px solid #000; 
+cursor: url('arrow.png'), auto;
+transform:translate(5px,5px);  
+ cursor: url('arrow.png'), auto;
+}
+
+
+#contenedorprincipal
+{
+display:grid;
+grid-template-columns: 1fr 7fr 1fr;
+grid-template-rows: auto;
+
+}
+#contenedor1
+{
+background-color: rgb(0,128,128);
+cursor: url('arrow.png'), auto;
+}
+
+#contenedor2
+{
+background-color:beige;      
+cursor: url('arrow.png'), auto;
+}
+
+#contenedor3
+{
+background-color: rgb(0,128,128);   
+cursor: url('arrow.png'), auto;
+}
+
+          .fondo-video {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  z-index: 0;
+                  display:block;
+                  position:absolute;
+                  top: 0;
+                  left: 0;
+                       }
+
+.texto{
+margin:0;
+font-family:"Coral pixels";
+font-size:2.5rem;
+font-weight: 900;    
+z-index:1;  
+position:relative;
+text-align:center;
+background: linear-gradient(90deg,rgb(243, 241, 241) 0%, rgb(209, 209, 209) 100%);
+                  background-clip: text;
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+}
+
+.titulo1{
+font-family:"Coral pixels";
+font-size:4rem;
+font-weight: 900;    
+z-index:1;  
+position:relative;
+text-align:center;
+background: linear-gradient(90deg,rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
+                  background-clip: text;
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;  
+}
+#contenedorvideo
+{
+grid-column:2;
+border:8px solid #7e7e7e;
+border-bottom:8px solid #000;
+position: relative;   
+overflow: hidden;
+height: 1080px;   
+}
+
+
+#barradetareas
+{
+background: #7e7e7e;
+margin:0;
+padding-top:5px;
+padding-bottom:5px;
+padding-left:5px;
+padding-right:5px;
+display:flex;
+align-items: center;
+cursor: url('arrow.png'), auto;
+}
+
+#barradetareas *
+{
+cursor: url('arrow.png'), auto !important;  
+}
+
+
+
+#botonwindows{
+margin:0;
+width:6%;
+height:5%;
+padding:2px;
+box-shadow: 4px 4px 0 #000;
+left: 20px;
+cursor: url('arrow.png'), auto;
+bottom: 20px;
+}
+
+#botonwindows:active
+{
+transition: 0.1s;
+box-shadow: 1px 1px 0 #000;
+transform:translate(2px,2px);    
+cursor: url('arrow.png'), auto;    
+}
+
+#reloj
+{
+font-family:"jersey 10";
+font-size:2rem; 
+margin-left: auto;
+text-indent:10px;
+padding-right:10px;
+font-weight: lighter;
+border:2px solid black;
+cursor: url('arrow.png'), auto;
+}
+
+#barracarga
+{
+display:none;
+position:fixed;
+  top: 50%;                   
+  left: 50%;                 
+  transform: translate(-50%, -50%); 
+  z-index: 1000; 
+   cursor: url('arrow.png'), auto;
+}
+
+.seccion {
+  display: none; 
+  margin-top: 20px;
+  position: relative;
+  z-index: 2; 
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Coral pixels";
+  color: white;
+  
+}
+
+.seccion.activo {
+  display: block; 
+}
+
+#foto
+{
+image-rendering: pixelated;
+  filter: grayscale(100%) contrast(150%) brightness(90%);
+  width: 200px; 
+  height: auto;
+}
+
+.flex
+{
+display:flex;
+flex-direction: column;
+}
+
+
+#logo
+{
+width:9%;
+height:11%;
+cursor: url('arrow.png'), auto;
+}
+
+#logo1
+{
+width:6%;
+height:11%;
+cursor: url('arrow.png'), auto;
+}
+
+.texto1{
+font-family:"coral pixels";
+font-size:2.5rem;
+font-weight: 900;    
+z-index:1;  
+position:relative;
+text-align:center;
+background: linear-gradient(90deg,rgb(243, 241, 241) 0%, rgb(255, 255, 255) 100%);
+                  background-clip: text;
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+}
+
+.botonmenu1{
+font-size: 2rem;
+font-family: "Jersey 10";
+background-color: rgb(190, 187, 187);
+border-bottom: 8px solid #000;
+border-right: 8px solid #000;
+width: 40%;
+cursor: url('arrow.png'), auto;
+}
+
+.botonmenu1:active{
+transition: 0.1;
+border-bottom: 1px solid #000;
+border-right: 1px solid #000; 
+cursor: url('arrow.png'), auto;
+transform:translate(5px,5px);  
+ cursor: url('arrow.png'), auto;
+}
+
+
+.texto2{
+font-family:"Coral pixels";
+font-size:2.5rem;
+font-weight: 900;    
+z-index:1;  
+position:relative;
+text-align:center;
+background: linear-gradient(90deg,rgb(0, 0, 0) 0%, rgb(20rgb(0, 0, 0)));
+                  background-clip: text;
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+}
+
+#botonsalir
+{
+font-size:2rem;
+text-align: center;
+ top: 50%;                   
+left: 50%;    
+background-color:#b1a9a9;
+max-width: 42px;
+max-height: 42px;
+z-index:1;
+margin:0;
+padding-top:3px;
+padding-left: 10px;
+padding-right:10px; 
+border-top:2px solid black;
+border-bottom:2px solid black;
+font-family:"jersey 10"; 
+ cursor: url('arrow.png'), auto;
+}
+
+#botonsalir1
+{
+font-size:2rem;
+text-align: center;
+ top: 50%;                   
+left: 50%;    
+background-color:#b1a9a9;
+max-width: 42px;
+max-height: 42px;
+z-index:1;
+margin:0;
+padding-top:3px;
+padding-left: 10px;
+padding-right:10px; 
+border-top:2px solid black;
+border-bottom:2px solid black;
+font-family:"jersey 10"; 
+ cursor: url('arrow.png'), auto;
+}
+
+
+#ubicacion
+{
+display:flex;
+align-items: center;
+justify-content:center;
+margin:0;  
+}
+
+#colorboton
+{
+background: linear-gradient(90deg,rgba(57, 77, 205, 1) 0%, rgba(51, 189, 182, 1) 50%, rgba(60, 75, 176, 1) 100%);
+margin:0; 
+text-align:center;
+font-family:"jersey 10";      
+padding-left: 238px;
+padding-right:238px;
+z-index:-1;
+font-size:2.1rem;
+height:38px;
+border-top:2px solid black;
+border-bottom:2px solid black;
+ cursor: url('arrow.png'), auto;
+}
+
+#colorboton1
+{
+background: linear-gradient(90deg,rgba(60, 75, 176, 1) 0%, rgba(189, 74, 51, 1) 50%, rgba(60, 75, 176, 1) 100%);
+margin:0; 
+text-align:center;
+font-family:"jersey 10";      
+padding-left: 176px;
+padding-right:177px;
+z-index:-1;
+font-size:2.1rem;
+height:38px;
+border-top:2px solid black;
+border-bottom:2px solid black;
+ cursor: url('arrow.png'), auto;
+}
+
+
+
+#estructuracanciones
+{
+display:flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding-left: 150px;
+padding-right:150px;
+margin:0; 
+
+}
+
+#estructuracanciones1
+{
+display:flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding-left: 150px;
+padding-right:150px;
+margin:0; 
+
+}
+
+
+#colorcanciones
+{
+background-color:#dfd9d9;
+padding-left: 134px;
+padding-right:134px;
+border: 10px solid #dfd9d9;
+margin:0; 
+height:130px;
+overflow-y: auto;
+ cursor: url('arrow.png'), auto;
+}
+
+#colorcanciones1
+{
+background-color:#dfd9d9;
+padding-left: 134px;
+padding-right:134px;
+border: 10px solid #dfd9d9;
+margin:0; 
+height:130px;
+overflow-y: auto;
+ cursor: url('arrow.png'), auto;
+ overflow-y: auto; 
+width:229px;
+}
+
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+  background: none;
+   cursor: url('arrow.png'), auto;
+}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-button {
+  width: 15px;
+  height: 15px;
+  background: silver;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px gray;
+  border: 1px solid;
+  border-color: silver #000 #000 silver;
+     cursor: url('arrow.png'), auto;
+}
+
+
+::-webkit-scrollbar-track {
+  image-rendering: optimizeSpeed;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgLTAuNSAyIDIiIHNoYXBlLXJlbmRlcmluZz0iY3Jpc3BFZGdlcyI+CjxtZXRhZGF0YT5NYWRlIHdpdGggUGl4ZWxzIHRvIFN2ZyBodHRwczovL2NvZGVwZW4uaW8vc2hzaGF3L3Blbi9YYnh2Tmo8L21ldGFkYXRhPgo8cGF0aCBzdHJva2U9IiNjMGMwYzAiIGQ9Ik0wIDBoMU0xIDFoMSIgLz4KPC9zdmc+");
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: 2px;
+     cursor: url('arrow.png'), auto;
+}
+
+::-webkit-scrollbar-button {
+  background-repeat: no-repeat;
+  background-size: 15px;
+     cursor: url('arrow.png'), auto;
+}
+
+
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgLTAuNSAxNiAxNiIgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj4KPG1ldGFkYXRhPk1hZGUgd2l0aCBQaXhlbHMgdG8gU3ZnIGh0dHBzOi8vY29kZXBlbi5pby9zaHNoYXcvcGVuL1hieHZOajwvbWV0YWRhdGE+CjxwYXRoIHN0cm9rZT0iIzAwMDAwMCIgZD0iTTcgNWgxTTYgNmgzTTUgN2g1TTQgOGg3IiAvPgo8L3N2Zz4=");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgLTAuNSAxNiAxNiIgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj4KPG1ldGFkYXRhPk1hZGUgd2l0aCBQaXhlbHMgdG8gU3ZnIGh0dHBzOi8vY29kZXBlbi5pby9zaHNoYXcvcGVuL1hieHZOajwvbWV0YWRhdGE+CjxwYXRoIHN0cm9rZT0iIzAwMDAwMCIgZD0iTTQgNWg3TTUgNmg1TTYgN2gzTTcgOGgxIiAvPgo8L3N2Zz4=");
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgLTAuNSAxNiAxNiIgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj4KPG1ldGFkYXRhPk1hZGUgd2l0aCBQaXhlbHMgdG8gU3ZnIGh0dHBzOi8vY29kZXBlbi5pby9zaHNoYXcvcGVuL1hieHZOajwvbWV0YWRhdGE+CjxwYXRoIHN0cm9rZT0iIzAwMDAwMCIgZD0iTTggM2gxTTcgNGgyTTYgNWgzTTUgNmg0TTYgN2gzTTcgOGgyTTggOWgxIiAvPgo8L3N2Zz4=");
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgLTAuNSAxNiAxNiIgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj4KPG1ldGFkYXRhPk1hZGUgd2l0aCBQaXhlbHMgdG8gU3ZnIGh0dHBzOi8vY29kZXBlbi5pby9zaHNoYXcvcGVuL1hieHZOajwvbWV0YWRhdGE+CjxwYXRoIHN0cm9rZT0iIzAwMDAwMCIgZD0iTTYgM2gxTTYgNGgyTTYgNWgzTTYgNmg0TTYgN2gzTTYgOGgyTTYgOWgxIiAvPgo8L3N2Zz4=");
+}
+
+::-webkit-scrollbar-corner {
+  background: silver;
+     cursor: url('arrow.png'), auto;
+}
+
+
+#lista-canciones li.activo {
+  display: inline-block;
+  background: linear-gradient(90deg, rgba(191,59,59,1) 0%, rgba(150,158,57,1) 50%, rgba(57,96,189,1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: wave 2s ease-in-out infinite;
+   cursor: url('arrow.png'), auto;
+}
+
+#lista-canciones {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+#lista-canciones li{
+font-family:"jersey 10";
+font-size:2rem;
+margin:0;  
+}
+
+
+
+
+@keyframes wave
+{
+
+0%, 100%{
+transform:translateY(0);  
+}  
+
+50%{
+transform:translateY(-10px);
+} 
+}
+
+
+
+#ventanacanciones
+{
+display:none;
+position:fixed;
+z-index: 10; 
+}
+
+#ventanaportadas
+{
+display:none;
+position:fixed;
+z-index: 10; 
+}
+
+
+            #boton5 {
+            padding-left:10px;
+            width:3%;
+            height:3%;
+            cursor: url('arrow.png'), auto;
+            }
+
+            #boton6 {
+            padding-left:10px;
+            width:3%;
+            height:3%;
+            cursor: url('arrow.png'), auto;
+            }
+#moverventana
+{
+  cursor: url('arrow.png'), auto;
+   display: flex;
+    align-items: center;
+    justify-content: space-between;
+      
+}
+
+
+#moverventana1
+{
+  cursor: url('arrow.png'), auto;
+   display: flex;
+    align-items: center;
+    justify-content: space-between;
+      
+}
+
+.estructuraportadas
+{
+display:flex;
+align-items: center;
+justify-content: center;
+flex-direction: row;
+margin:0;
+}
+
+.portadas{
+width:50%;
+height:50%;  
+padding:10px;
+image-rendering: pixelated;
+border:4px solid  linear-gradient(90deg,rgba(57, 77, 205, 1) 0%, rgba(51, 189, 182, 1) 50%, rgba(60, 75, 176, 1) 100%);    
+}
+
+</style>
+
+
+
+
+
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Boldonse&family=Bungee+Spice&family=Cal+Sans&family=Coral+Pixels&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Gabarito:wght@400..900&family=Jersey+10&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Nabla&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Odibee+Sans&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Pacifico&family=Pixelify+Sans:wght@400..700&family=Poetsen+One&family=Silkscreen:wght@400;700&family=Tagesschrift&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+</head>
+
+
+<body>
+<div id="pantallacarga">
+<div id="contenidopantalla">
+<img src="screenbarWindows.gif">
+<p id="texto-pantalla">CARGANDO PÁGINA</p>
+</div>
+</div>
+<div id="ContenidoPagina" style="display:none;">
+
+<div id="colorfondo">
+<h2 class="titulo">PORTFOLIO</h2>
+<div id="opciones">
+<li><button id="boton1" class="botonmenu">Sobre mi</button></li>
+<li><button id="boton2" class="botonmenu">Habilidades</button></li>
+<li><button id="boton3" class="botonmenu">Proyectos</button></li>
+<li><button id="boton4" class="botonmenu">Contactos</button></li>    
+</div>
+</div>
+<div id="contenedorprincipal">
+
+ <div id="contenedor1"></div>
+<div id="contenedor2"> 
+<div id="contenedorvideo">
+  <div id="texto-inicio">
+      <p  class="texto">Hola, como estas</p>
+      <p  class="texto">  En este portfolio, vas a poder conocer sobre mi, que experiencia tengo y que proyectos realizé.</p>
+      <p  class="texto">Para empezar haga click en algun titulo</p>
+</div>
+
+ <div id="sobreMi" class="seccion">
+
+<h2 class="titulo1">DATOS PERSONALES</h2>
+<img id="foto" src="fotomia.jpg">
+<p class="texto">NOMBRE: VALENTINO</p>
+<p class="texto">APELLIDO: PORRO</p>
+<p class="texto">EDAD: 16 AÑOS</p>
+<p class="texto">PAIS: ARGENTINA</p>  
+<p class="texto">EDUCACION: PRIMARIA</p>
+<p class="texto">TERMINANDO SECUNDARIA</p>
+</div>
+
+<div id="habilidades" class="seccion">
+  <h2 class="titulo1">LENGUAJES</h2>
+<div id="flex">
+<img id="logo" src="C.png">
+<p class="texto">CICLOS,CONDICIONES,VECTORES,MATRICES,STRUCT,FUNCIONES</p>
+<img id="logo" src="mysql.png">
+<p class="texto">DDL, DML, CONSULTAS</p>
+<img id="logo" src="html.webp"><img id="logo1" src="css.png">
+<p class="texto">CLASES, FLEXBOX, SUBCLASES, CONTENEDORES, HIPERVINCULOS, TABLAS, ELEMENTOS</p>
+</div>
+</div>
+
+<div id="proyectos" class="seccion">
+  <H2 class="titulo">SHERLOCK HOLMES.COM</H2>
+  <p class="texto">Este fue mi primer proyecto, hecho en HTML, CSS Y JS.</p>
+  <p class="texto">Consiste en una pagina principal con 5 opciones, buscar, libros, personajes, adaptaciones y biografia</p>
+  <p class="texto">Consiste en 5 archivos, y me tomo unas semanas en terminarlo</p>
+  <button class="botonmenu1" onclick="location.href='https://jorge-salvaje.github.io/Sherlock-Holmes.com/'">IR</button>
+  <h2 class="titulo">GESTION DE NEGOCIO</h2>
+  <p class="texto">Este proyecto es mas reciente, consiste en un programa hecho en C, donde se puede gestionar un negocio</p>
+  <p class="texto">Posee 6 opciones, con switch, y submenus en cada uno. Me tomo una semana y poseé 1700 lineas</p>
+  <button class="botonmenu1" id="descargar-btn">Descargar</button>
+</div>
+
+<div id="contactos" class="seccion">
+  <h2 class="titulo1">MIS CONTACTOS</h2>
+  <p class="texto">GMAIL:"valenporro2022@gmail.com"</p>
+  <p class="texto"> GITHUB:"valentino"</p>
+</div>
+
+<video id="divvideo" autoplay muted loop playsinline class="fondo-video" src="Video.webm">
+</video>
+</div>
+
+</div>
+
+<div id="contenedor3"></div> 
+
+
+</div>
+
+
+<div id="barradetareas">
+
+<img id="botonwindows" src="logo.png">
+<img id="boton" src="Apple-Music.png">
+<img id="boton" onclick="location.href='https://github.com/jorge-salvaje'"   src="Safari.png">
+<img id="boton" onclick="location.href='https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=VpCqJQvlttBFDKkfFghBFqVjvTZwfLHjDzBVPDjWBBlKsNmCScQhJqMSJrsWBZbhFnpFBXQ'" src="Mail.png">
+<img id="boton5" src="Apple-Music2.png">
+<img id="boton6" src="portadas.png">
+<div id="reloj"></div>  
+</div>
+ <audio id="Musica" loop>
+            <source src="no surprises.mp3" type="audio/mpeg" />
+    
+      </audio>
+
+<img id="barracarga"src="cargando.gif">
+
+
+<audio id="audiobarra" loop>
+<source src="printer.mp3" type="audio/mpeg"/>
+</audio>
+
+ <audio id="Musica2">
+            <source src="sonido-inicio.mp3" type="audio/mpeg" />
+         
+      </audio>
+ <audio id="Musica3" loop>
+            <source src="let down.mp3" type="audio/mpeg" />
+       
+      </audio>
+       <audio id="Musica4" loop>
+            <source src="lucky.mp3" type="audio/mpeg" />
+            
+      </audio>
+             <audio id="Musica4" loop>
+            <source src="man of war.mp3" type="audio/mpeg" />
+        
+      </audio>
+                   <audio id="Musica5" loop>
+            <source src="karma police.mp3" type="audio/mpeg" />
+        
+      </audio>
+                         <audio id="Musica6" loop>
+            <source src="electionering.mp3" type="audio/mpeg" />
+           
+      </audio>
+ <div id="contenedor-disco">
+<img id="disco" src="disco.gif" width="3%">
+</div>
+<div id="ventanacanciones">
+<div style="display:flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;">
+<div style="padding-left: 316px; padding-right:315px;background-color: #ddd8d8;height:10px;border-top:2px solid black;border-left:2px solid black;border-right:2px solid black;
+margin:0;"></div>
+<div id="ubicacion">
+<div style="  width: 8px;height:42px;background-color:#ddd8d8;border-left:2px solid black;margin:0; "></div>
+<div style="  width: 10px;height:38px;background-color:#394dcd;border-top:2px solid black;margin:0;border-bottom:2px solid black; "></div>
+<div id="moverventana">
+<div id="colorboton">MUSICA</div>
+<button id="botonsalir">X</button>
+</div>
+<div style="  width: 10px;height:38px;background-color:#394dcd;border-top:2px solid black;margin:0;border-bottom:2px solid black; "></div>
+<div style="  width: 8px;height:42px;background-color:#ddd8d8; border-right:2px solid black;margin:0; "></div>
+</div>
+<div id="estructuracanciones">
+<div style="border-left: 2px solid #000000;border-bottom: 2px solid #000000;border-right: 2px solid #000000; background-color: #ddd8d8  ;padding:10px;margin:0; ">
+<div style="border: 2px solid #ffffff;">   
+<div id="colorcanciones">
+  <ul id="lista-canciones">
+    <li data-index="0" data-titulo="RADIOHEAD - NO SURPRISES" data-src="no surprises.mp3" data-disco="disco.gif">RADIOHEAD - NO SURPRISES</li>
+    <li data-index="1" data-titulo="RADIOHEAD - LET DOWN" data-src="let down.mp3" data-disco="disco1.gif">RADIOHEAD - LET DOWN</li>
+    <li data-index="2" data-titulo="RADIOHEAD - LUCKY" data-src="lucky.mp3" data-disco="disco2.gif">RADIOHEAD - LUCKY</li>
+    <li data-index="3" data-titulo="RADIOHEAD - MAN OF WAR" data-src="man of war.mp3" data-disco="disco3.gif">RADIOHEAD - MAN OF WAR</li>
+    <li data-index="4" data-titulo="RADIOHEAD - KARMA POLICE" data-src="karma police.mp3" data-disco="disco4.gif">RADIOHEAD - KARMA POLICE</li>
+    <li data-index="5" data-titulo="RADIOHEAD - ELECTIONEERING" data-src="electionering.mp3" data-disco="disco5.gif">RADIOHEAD - ELECTIONEERING</li>
+  </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="ventanaportadas">
+<div style="display:flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;">
+<div style="padding-left: 270px; padding-right:270px;background-color: #ddd8d8;height:10px;border-top:2px solid black;border-left:2px solid black;border-right:2px solid black;
+margin:0;"></div>
+<div id="ubicacion">
+<div style="  width: 8px;height:42px;background-color:#ddd8d8;border-left:2px solid black;margin:0; "></div>
+<div style="  width: 10px;height:38px;background-color:#394dcd;border-top:2px solid black;margin:0;border-bottom:2px solid black; "></div>
+<div id="moverventana1">
+<div id="colorboton1">PORTADAS</div>
+<button id="botonsalir1">X</button>
+</div>
+<div style="  width: 10px;height:38px;background-color:#394dcd;border-top:2px solid black;margin:0;border-bottom:2px solid black; "></div>
+<div style="  width: 8px;height:42px;background-color:#ddd8d8; border-right:2px solid black;margin:0; "></div>
+</div>
+<div id="estructuracanciones1">
+<div style="border-left: 2px solid #000000;border-bottom: 2px solid #000000;border-right: 2px solid #000000; background-color: #ddd8d8  ;padding:10px;margin:0; ">
+<div style="border: 2px solid #ffffff;">   
+<div id="colorcanciones1">
+<div class="estructuraportadas">
+<img class="portadas" src="portadas albumes/PABLO HONEY.jpg">
+<img class="portadas" src="portadas albumes/THE BENDS.avif">
+<img class="portadas" src="portadas albumes/OK COMPUTER.png">
+</div>
+<div class="estructuraportadas">
+<img class="portadas" src="portadas albumes/KID A.png">
+<img class="portadas" src="portadas albumes/PARACHUTES.jpg">
+<img class="portadas" src="portadas albumes/A RUSH OF BLOOD TO THE HEAD.png">
+</div>
+<div class="estructuraportadas">
+<img class="portadas" src="portadas albumes/X&U.jpg">
+<img class="portadas" src="portadas albumes/VIVA LA VIDA.png">
+<img class="portadas" src="portadas albumes/DOOKIE.jpg">
+</div>
+<div class="estructuraportadas">
+<img class="portadas" src="portadas albumes/NIMROD.jpg">
+<img class="portadas" src="portadas albumes/AMERICAN IDIOT.png">
+<img class="portadas" src="portadas albumes/21ST CENTURY BREAKDOWN.jpg">
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+</div>
+</body>
+
+
+
+
+
+
+<script>
+let zIndexCounter = 10; // empezamos en 10
+
+function crearVentana(botonAbrirId, ventanaId, botonCerrarId, barraTituloId) {
+  const botonAbrir = document.getElementById(botonAbrirId);
+  const ventana = document.getElementById(ventanaId);
+  const botonCerrar = document.getElementById(botonCerrarId);
+  const barraTitulo = document.getElementById(barraTituloId);
+
+  let isDragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  function mostrarVentana() {
+    ventana.style.display = 'block';
+    ventana.style.position = 'fixed';
+    ventana.style.left = '50%';
+    ventana.style.top = '50%';
+    ventana.style.transform = 'translate(-50%, -50%)';
+
+    // al abrir, también la llevamos al frente
+    zIndexCounter++;
+    ventana.style.zIndex = zIndexCounter;
+  }
+
+  function ocultarVentana() {
+    ventana.style.display = 'none';
+  }
+
+  // cada vez que clickeás dentro de la ventana, la traemos al frente
+  ventana.addEventListener('mousedown', () => {
+    zIndexCounter++;
+    ventana.style.zIndex = zIndexCounter;
+  });
+
+  botonAbrir.addEventListener('click', mostrarVentana);
+  botonCerrar.addEventListener('click', ocultarVentana);
+
+  barraTitulo.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    ventana.style.cursor = 'grabbing';
+
+    const rect = ventana.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+
+    ventana.style.left = `${rect.left}px`;
+    ventana.style.top = `${rect.top}px`;
+    ventana.style.transform = 'none';
+
+    // también lo subimos al frente cuando empezamos a arrastrar
+    zIndexCounter++;
+    ventana.style.zIndex = zIndexCounter;
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    ventana.style.left = `${e.clientX - offsetX}px`;
+    ventana.style.top = `${e.clientY - offsetY}px`;
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    ventana.style.cursor = 'grab';
+  });
+}
+
+crearVentana('boton5', 'ventanacanciones', 'botonsalir', 'moverventana');
+crearVentana('boton6', 'ventanaportadas', 'botonsalir1', 'moverventana1');
+</script>
+
+
+<script>
+const botonDescarga = document.getElementById('descargar-btn');
+const urlArchivo = 'ejercicio integrador tp.cpp';
+const nombreArchivo = 'TRABAJO C.zip';
+
+botonDescarga.addEventListener('click', () => {
+    const enlaceTemp = document.createElement('a');
+    enlaceTemp.href = urlArchivo;
+    enlaceTemp.download = nombreArchivo;
+    document.body.appendChild(enlaceTemp);
+    enlaceTemp.click();
+    document.body.removeChild(enlaceTemp);
+});  
+</script>
+
+<script>
+const botonDescarga1 = document.getElementById('descargar-btn1');
+const urlArchivo1 = 'create casos de sherlock holmes.sql';
+const nombreArchivo1 = 'trabajo MYSQL.zip';
+
+botonDescarga.addEventListener('click', () => {
+    const enlaceTemp = document.createElement('a');
+    enlaceTemp.href = urlArchivo;
+    enlaceTemp.download = nombreArchivo;
+    document.body.appendChild(enlaceTemp);
+    enlaceTemp.click();
+    document.body.removeChild(enlaceTemp);
+});  
+</script>
+
+<script>
+  const video = document.getElementById("divvideo"); 
+const cargando = document.getElementById("barracarga");
+const textoInicio = document.getElementById("texto-inicio"); 
+
+function cambiar(nuevoVideo, seccionId) {
+
+    cargando.style.display = "block";
+
+    setTimeout(() => {
+
+        cargando.style.display = "none";
+
+
+        video.src = nuevoVideo;
+        video.load();
+        video.play();
+
+
+        if (textoInicio) textoInicio.style.display = "none";
+
+     
+        document.querySelectorAll(".seccion").forEach(sec => sec.classList.remove("activo"));
+
+    
+        const div = document.getElementById(seccionId);
+        if(div) div.classList.add("activo");
+        else console.error("No se encontró el div con id:", seccionId);
+
+    }, 6000); 
+}
+
+
+document.getElementById("boton1").addEventListener("click", () => cambiar("Video1.webm", "sobreMi"));
+document.getElementById("boton2").addEventListener("click", () => cambiar("Video2.webm", "habilidades"));
+document.getElementById("boton3").addEventListener("click", () => cambiar("Video3.webm", "proyectos"));
+document.getElementById("boton4").addEventListener("click", () => cambiar("Video4.webm", "contactos"));
+</script>
+
+
+
+
+<script>
+const musica = document.getElementById('Musica');
+const disco = document.getElementById('disco'); 
+const boton = document.getElementById('boton');
+const listaCanciones = Array.from(document.querySelectorAll('#lista-canciones li'));
+
+let indice = 0;
+let clickCount = 0;
+let clickTimer = null;
+
+
+function aplicarAnimacionActivo(ind) {
+  listaCanciones.forEach(li => {
+    li.classList.remove('activo');
+    li.innerHTML = li.dataset.titulo; 
+  });
+
+  const li = listaCanciones[ind];
+  if (!li) return;
+  li.classList.add('activo');
+
+  const titulo = li.dataset.titulo;
+  li.innerHTML = ''; 
+  titulo.split('').forEach((letra, i) => {
+    const span = document.createElement('span');
+    span.textContent = letra;
+    span.style.animationDelay = `${i * 0.05}s`; 
+    li.appendChild(span);
+  });
+}
+
+function cargarCancion(ind) {
+  const li = listaCanciones[ind];
+  if (!li) return;
+
+  musica.pause();
+  musica.currentTime = 0;
+
+
+  if(li.dataset.src) musica.src = li.dataset.src;
+  if(li.dataset.disco) disco.src = li.dataset.disco;
+
+  aplicarAnimacionActivo(ind);
+  musica.load();
+}
+
+
+function intentarPlay() {
+  const p = musica.play();
+  if (p !== undefined) {
+    p.catch(err => {
+      console.warn('play() rechazado, reintentando...', err);
+      setTimeout(() => { musica.play().catch(()=>{}); }, 120);
+    });
+  }
+}
+
+
+function handleSingleClick() {
+  if (musica.paused) {
+    intentarPlay();
+    disco.classList.add('visible');
+  } else {
+    musica.pause();
+    disco.classList.remove('visible');
+  }
+}
+
+function handleDoubleClick() {
+  indice = (indice + 1) % listaCanciones.length;
+  cargarCancion(indice);
+  intentarPlay();
+  disco.classList.add('visible');
+}
+
+boton.addEventListener('click', () => {
+  clickCount++;
+  if (clickTimer) clearTimeout(clickTimer);
+  clickTimer = setTimeout(() => {
+    if (clickCount === 1) handleSingleClick();
+    else if (clickCount >= 2) handleDoubleClick();
+    clickCount = 0;
+    clickTimer = null;
+  }, 250);
+});
+
+
+listaCanciones.forEach((li, idx) => {
+  li.addEventListener('click', () => {
+    indice = idx;
+    cargarCancion(indice);
+    intentarPlay();
+    disco.classList.add('visible');
+  });
+});
+
+window.addEventListener('load', () => cargarCancion(indice));
+</script>
+
+
+
+
+
+
+<script>
+  window.addEventListener('load', () => {
+    const splash = document.getElementById('pantallacarga');
+    const main = document.getElementById('ContenidoPagina');
+    setTimeout(() => {
+      splash.style.opacity = '0';
+      splash.style.transition = 'opacity 0.5s ease';
+      splash.addEventListener('transitionend', () => splash.remove());
+      main.style.display = 'block';
+    }, 10000); 
+  });
+</script>
+
+
+
+<script>
+document.getElementById('botonwindows').addEventListener('click', () => {
+    document.getElementById('Musica2').play();
+});
+</script>
+
+
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      document.getElementById('reloj').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+
+
+
+</html>
