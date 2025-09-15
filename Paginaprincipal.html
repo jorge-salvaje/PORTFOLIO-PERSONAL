@@ -741,7 +741,7 @@ border:4px solid  linear-gradient(90deg,rgba(57, 77, 205, 1) 0%, rgba(51, 189, 1
   <p class="texto"> GITHUB:"valentino"</p>
 </div>
 
-<video id="divvideo" autoplay muted loop playsinline class="fondo-video" src="Video.webm">
+<video id="divvideo" autoplay muted loop playsinline class="fondo-video" src="video.webm">
 </video>
 </div>
 
@@ -904,7 +904,7 @@ margin:0;"></div>
 
 
 <script>
-let zIndexCounter = 10; // empezamos en 10
+let zIndexCounter = 10; 
 
 function crearVentana(botonAbrirId, ventanaId, botonCerrarId, barraTituloId) {
   const botonAbrir = document.getElementById(botonAbrirId);
@@ -923,7 +923,7 @@ function crearVentana(botonAbrirId, ventanaId, botonCerrarId, barraTituloId) {
     ventana.style.top = '50%';
     ventana.style.transform = 'translate(-50%, -50%)';
 
-    // al abrir, también la llevamos al frente
+
     zIndexCounter++;
     ventana.style.zIndex = zIndexCounter;
   }
@@ -932,7 +932,7 @@ function crearVentana(botonAbrirId, ventanaId, botonCerrarId, barraTituloId) {
     ventana.style.display = 'none';
   }
 
-  // cada vez que clickeás dentro de la ventana, la traemos al frente
+
   ventana.addEventListener('mousedown', () => {
     zIndexCounter++;
     ventana.style.zIndex = zIndexCounter;
@@ -953,7 +953,7 @@ function crearVentana(botonAbrirId, ventanaId, botonCerrarId, barraTituloId) {
     ventana.style.top = `${rect.top}px`;
     ventana.style.transform = 'none';
 
-    // también lo subimos al frente cuando empezamos a arrastrar
+  
     zIndexCounter++;
     ventana.style.zIndex = zIndexCounter;
   });
