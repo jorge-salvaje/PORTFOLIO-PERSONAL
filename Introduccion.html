@@ -5,7 +5,22 @@
             body {
                   margin: 0;
             }
+html::before {
+  content: '';
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  
 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3) 2px, transparent 2px);
+  background-size: 100% 4px;
+  
+
+  z-index: 1;
+  pointer-events: none;
+}
             h2 {
                   font-family: "Coral Pixels", Arial, sans-serif;
                   font-size: 7rem;
